@@ -16,6 +16,13 @@
     </properties>
 
     <build>
+        <resources>
+            <!-- -DsystemEnv -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>

@@ -16,7 +16,7 @@ public class GreetingsController {
 
     @RequestMapping("/")
     public String printHelloWorld(Model model) {
-        model.addAttribute("message", "Hello World!");
+        model.addAttribute("message", "APURVA");
         return "index";
     }
 }

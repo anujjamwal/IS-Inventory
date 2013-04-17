@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title> Create An Asset </title>
+        <title> Create an asset </title>
     </head>
     <body>
-        <form method="post" action="new.st">
+        <form method="post" action="new">
             <input type=text id="assetType" name="assetType"></input>
             <button type=submit>send</button>
         </form>

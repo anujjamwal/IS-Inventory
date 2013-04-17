@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 public class Asset {
 
      private String asset_type;
+
       public String getAssetType()
       {
            return asset_type;

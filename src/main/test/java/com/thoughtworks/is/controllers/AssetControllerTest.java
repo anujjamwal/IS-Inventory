@@ -3,6 +3,8 @@ package com.thoughtworks.is.controllers;
 import junit.framework.Assert;
 import org.openqa.selenium.*;
 
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,9 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AssetControllerTest  {
 
+
+
     @Test
     public void testing() {
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new HtmlUnitDriver();
 
         driver.get("http://localhost:8080");
 //        WebElement element = driver.findElement(By.name("q"));

@@ -97,7 +97,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.32.0</version>
+            <version>2.28.0</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -105,10 +105,51 @@
             <scope>test</scope>
             <version>2.0rc3</version>
         </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.webdriver</groupId>
-            <artifactId>webdriver-firefox</artifactId>
-            <version>0.9.7089</version>
-        </dependency>
     </dependencies>
 </project>
+
+
+
+
+
+
+
+        <!--&lt;!&ndash; MySQL database driver &ndash;&gt;-->
+<!--<dependency>-->
+<!--<groupId>mysql</groupId>-->
+<!--<artifactId>mysql-connector-java</artifactId>-->
+<!--<version>5.1.9</version>-->
+<!--</dependency>-->
+
+        <!--&lt;!&ndash; Hibernate framework &ndash;&gt;-->
+<!--<dependency>-->
+<!--<groupId>org.hibernate</groupId>-->
+<!--<artifactId>hibernate-core</artifactId>-->
+<!--<version>3.6.0.Final</version>-->
+<!--</dependency>-->
+
+
+        <!--&lt;!&ndash; Hibernate library dependecy start &ndash;&gt;-->
+<!--<dependency>-->
+<!--<groupId>dom4j</groupId>-->
+<!--<artifactId>dom4j</artifactId>-->
+<!--<version>1.6.1</version>-->
+<!--</dependency>-->
+
+<!--<dependency>-->
+<!--<groupId>commons-logging</groupId>-->
+<!--<artifactId>commons-logging</artifactId>-->
+<!--<version>1.1.1</version>-->
+<!--</dependency>-->
+
+<!--<dependency>-->
+<!--<groupId>commons-collections</groupId>-->
+<!--<artifactId>commons-collections</artifactId>-->
+<!--<version>3.2.1</version>-->
+<!--</dependency>-->
+
+<!--<dependency>-->
+<!--<groupId>antlr</groupId>-->
+<!--<artifactId>antlr</artifactId>-->
+<!--<version>2.7.7</version>-->
+<!--</dependency>-->

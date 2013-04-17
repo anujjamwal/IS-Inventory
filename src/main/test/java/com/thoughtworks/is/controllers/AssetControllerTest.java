@@ -23,7 +23,7 @@ public class AssetControllerTest  {
 //        element.submit();
 
         System.out.println("Page title is: " + driver.getTitle());
-        Assert.assertEquals(driver.getTitle(),"Welcome to Asset Management");
+        Assert.assertEquals(driver.getTitle(),"Create An Asset");
 
 //        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 //            public Boolean apply(WebDriver d) {

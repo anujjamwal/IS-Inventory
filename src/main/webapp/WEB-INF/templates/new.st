@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> Create type </title>
+        <title> Create An Asset </title>
     </head>
     <body>
         <form method="post" action="new.st">

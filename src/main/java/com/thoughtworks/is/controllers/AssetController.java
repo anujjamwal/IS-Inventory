@@ -24,7 +24,7 @@ public class AssetController {
     @RequestMapping(value="/new",method = RequestMethod.POST)
     public String createAsset(Model model,@ModelAttribute("asset")Asset asset, BindingResult result)
     {
-        System.out.println(asset.getAssetType());
+//        System.out.println(asset.getAssetType());
         model.addAttribute("assetType",asset.getAssetType());
         return "index";
     }

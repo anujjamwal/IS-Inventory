@@ -14,18 +14,18 @@ public class AssetController {
 
     @RequestMapping("/")
     public String printHelloWorld(Model model) {
-//       model.addAttribute("message", "APURVA");
-         return "redirect:/add_asset_type";
+         return "redirect:/create";
     }
-    @RequestMapping("/add_asset_type")
+
+    @RequestMapping("/create")
     public String addAssetType(Model model){
         return "new";
     }
+
     @RequestMapping(value="/new",method = RequestMethod.POST)
     public String createAsset(Model model,@ModelAttribute("asset")Asset asset, BindingResult result)
     {
-//        System.out.println(asset.getAssetType());
-        model.addAttribute("assetType",asset.getAssetType());
+        model.addAttribute("asset_type",asset.getAssetType());
         return "index";
     }
 

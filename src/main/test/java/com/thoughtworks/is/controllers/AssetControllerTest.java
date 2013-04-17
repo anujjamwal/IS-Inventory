@@ -20,7 +20,7 @@ public class AssetControllerTest  {
     public void testing() {
         WebDriver driver = new HtmlUnitDriver();
 
-        driver.get("http://localhost:8080");
+        driver.get("http://localhost:4040");
 //        WebElement element = driver.findElement(By.name("q"));
 //        element.sendKeys("Cheese!");
 

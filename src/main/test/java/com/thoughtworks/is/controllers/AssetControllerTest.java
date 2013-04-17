@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GreetingsControllerTest  {
+public class AssetControllerTest  {
 
     @Test
     public void testing() {
@@ -22,8 +22,8 @@ public class GreetingsControllerTest  {
 
 //        element.submit();
 
-       System.out.println("Page title is: " + driver.getTitle());
-       Assert.assertEquals(driver.getTitle(),"Welcome to Asset Management");
+        System.out.println("Page title is: " + driver.getTitle());
+        Assert.assertEquals(driver.getTitle(),"Welcome to Asset Management");
 
 //        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 //            public Boolean apply(WebDriver d) {

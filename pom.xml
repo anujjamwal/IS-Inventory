@@ -8,12 +8,16 @@
   <name>Inventory</name>
   <url>http://maven.apache.org</url>
 
+
     <properties>
         <java-version>1.6</java-version>
         <org.springframework.version>3.2.2.RELEASE</org.springframework.version>
         <org.slf4j-version>1.6</org.slf4j-version>
         <jetty.port>4040</jetty.port>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--<scala.version>2.10.1</scala.version>-->
+        <!--<scalate.version>1.5.2</scalate.version>-->
+        <!--<scalamd.version>1.2</scalamd.version>-->
     </properties>
 
     <build>
@@ -70,6 +74,7 @@
         </plugins>
     </build>
 
+
     <dependencies>
         <!-- Spring framework -->
         <dependency>
@@ -124,6 +129,48 @@
             <scope>test</scope>
             <version>2.0rc3</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>0.11.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.scala-lang</groupId>-->
+            <!--<artifactId>scala-compiler</artifactId>-->
+            <!--<version>${scala.version}</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; scalate templating engine &ndash;&gt;-->
+
+        <dependency>
+            <groupId>org.fusesource.scalate</groupId>
+            <artifactId>scalate-spring-mvc</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.fusesource.scalate</groupId>-->
+            <!--<artifactId>scalate-wikitext</artifactId>-->
+            <!--<version>${scalate.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.fusesource.scalate</groupId>-->
+            <!--<artifactId>scalate-page</artifactId>-->
+            <!--<version>${scalate.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.fusesource.scalamd</groupId>-->
+            <!--<artifactId>scalamd</artifactId>-->
+            <!--<version>${scalamd.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.fusesource.scalate</groupId>-->
+            <!--<artifactId>scalate-test</artifactId>-->
+            <!--<version>${scalate.version}</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
 
         <!-- MySQL database driver -->
         <dependency>

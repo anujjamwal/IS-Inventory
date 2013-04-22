@@ -1,0 +1,39 @@
+html
+  head
+    title  Create an asset
+    link{:rel=> 'stylesheet', :type=> 'text/css', :href=> 'resources/css/bootstrap.css', :media=> 'screen'}
+  body
+    form.form-horizontal{:method=> "post", :action=> "new"}
+      .control-group
+        label.control-label(for='Asset type') Asset Type
+        select#type(name='type')
+          option(value='Laptop') Laptop
+          option(value='Keyboard') Keyboard
+          option(value='Mouse') Mouse
+      .control-group
+        label.control-label(for='Brand') Brand
+        .controls
+          input#brand{:type=>'text', :name=>'brand'}
+      .control-group
+        label.control-label(for='Model') Model
+        .controls
+          input#model{:type=>'text', :name=>'model'}
+      .control-group
+        label.control-label(for='Serial_no') Serial_no
+        .controls
+          input#serialNo{:type=>'text', :name=>'serialNo'}
+      .control-group
+        label.control-label(for='Warranty') Warranty
+        .controls
+          input#warranty{:type=>'text', :name=>'warranty'}
+      .control-group
+        label.control-label(for='Asset Tag') Asset Tag
+        .controls
+          input#assetTag{:type=>'text', :name=>'assetTag'}
+      .control-group
+        label.control-label(for='Description') Description
+        .controls
+          input#description{:type=>'text', :name=>'description'}
+      .control-group
+        .controls
+          button{:type=>'submit'} send

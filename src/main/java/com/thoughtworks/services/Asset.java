@@ -1,26 +1,17 @@
 package com.thoughtworks.services;
 
+import lombok.Data;
 import org.springframework.stereotype.Service;
 
-public class Asset {
+public @Data class Asset {
 
-     private String asset_type;
+     private String type;
      private String brand;
      private String model;
-     private String serial_no;
+     private String serialNo;
      private String warranty;
-     private String asset_tag;
+     private String assetTag;
      private String description;
 
-     public String getAssetType()
-     {
-        return asset_type;
-
-     }
-     public void setAssetType(String asset_type)
-     {
-        this.asset_type=asset_type;
-     }
-
-
 }
+

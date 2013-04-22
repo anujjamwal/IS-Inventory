@@ -9,15 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+
 @Controller
 public class AssetController {
 
     @RequestMapping("/")
-    public String printHelloWorld(Model model) {
-         return "redirect:/create";
-    }
-
-    @RequestMapping("/create")
     public String addAssetType(Model model){
         return "new";
     }
@@ -25,9 +21,14 @@ public class AssetController {
     @RequestMapping(value="/new",method = RequestMethod.POST)
     public String createAsset(Model model,@ModelAttribute("asset")Asset asset, BindingResult result)
     {
-//        System.out.println(asset.getAssetType());
-        model.addAttribute("Type",asset.getType());
-        return "index";
+        model.addAttribute("assetType",asset.getType());
+        model.addAttribute("model",asset.getModel());
+        model.addAttribute("serialNo",asset.getSerialNo());
+        model.addAttribute("assetTag",asset.getAssetTag());
+        model.addAttribute("brand",asset.getBrand());
+        model.addAttribute("description",asset.getDescription());
+        model.addAttribute("warranty",asset.getWarranty());
+        return "view";
     }
 
 

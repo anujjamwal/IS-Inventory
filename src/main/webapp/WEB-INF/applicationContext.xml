@@ -15,6 +15,7 @@
     <!-- <bean id="productDao" class="springapp.repository.JdbcProductDao">
         <property name="dataSource" ref="dataSource"/>
     </bean> -->
+
     <bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
@@ -22,6 +23,7 @@
                 <value>classpath:${systemEnv}/*.properties</value>
             </list>
         </property>
+
         <property name="ignoreUnresolvablePlaceholders">
             <value>true</value>
         </property>

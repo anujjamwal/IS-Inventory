@@ -1,4 +1,4 @@
-package com.thoughtworks.stringtemplate;
+package com.thoughtworks.is.stringtemplate;
 
 import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.core.io.Resource;

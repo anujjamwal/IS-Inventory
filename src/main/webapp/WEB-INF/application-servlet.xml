@@ -23,7 +23,7 @@
     <!--</bean>-->
 
     <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="com.thoughtworks.stringtemplate.StringTemplateView" />
+        <property name="viewClass" value="com.thoughtworks.is.stringtemplate.StringTemplateView" />
         <!--<property name="order" value="2" />-->
         <property name="prefix" value="/WEB-INF/templates/" />
         <property name="suffix" value=".st" />

@@ -48,6 +48,25 @@
                     </requestLog>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.googlecode.flyway</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <user>root</user>
+                    <password>p@ssw0rd</password>
+                    <driver>com.mysql.jdbc.Driver</driver>
+                    <url>jdbc:mysql://localhost:3306/root</url>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.24</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
@@ -105,6 +124,34 @@
             <scope>test</scope>
             <version>2.0rc3</version>
         </dependency>
+
+        <!-- MySQL database driver -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.24</version>
+        </dependency>
+
+        <!--<Flyway>-->
+        <dependency>
+            <groupId>com.googlecode.flyway</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+
+        <!-- Hibernate framework -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>3.6.0.Beta2</version>
+        </dependency>
+
+        <!--log4j-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
     </dependencies>
 </project>
 
@@ -113,20 +160,6 @@
 
 
 
-
-        <!--&lt;!&ndash; MySQL database driver &ndash;&gt;-->
-<!--<dependency>-->
-<!--<groupId>mysql</groupId>-->
-<!--<artifactId>mysql-connector-java</artifactId>-->
-<!--<version>5.1.9</version>-->
-<!--</dependency>-->
-
-        <!--&lt;!&ndash; Hibernate framework &ndash;&gt;-->
-<!--<dependency>-->
-<!--<groupId>org.hibernate</groupId>-->
-<!--<artifactId>hibernate-core</artifactId>-->
-<!--<version>3.6.0.Final</version>-->
-<!--</dependency>-->
 
 
         <!--&lt;!&ndash; Hibernate library dependecy start &ndash;&gt;-->

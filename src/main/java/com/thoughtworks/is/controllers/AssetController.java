@@ -1,6 +1,6 @@
 package com.thoughtworks.is.controllers;
 
-import com.thoughtworks.services.Asset;
+import com.thoughtworks.is.services.Asset;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.ui.Model;
@@ -25,7 +25,8 @@ public class AssetController {
     @RequestMapping(value="/new",method = RequestMethod.POST)
     public String createAsset(Model model,@ModelAttribute("asset")Asset asset, BindingResult result)
     {
-        model.addAttribute("asset_type",asset.getAssetType());
+//        System.out.println(asset.getAssetType());
+        model.addAttribute("Type",asset.getType());
         return "index";
     }
 

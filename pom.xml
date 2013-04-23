@@ -15,6 +15,8 @@
         <org.slf4j-version>1.6</org.slf4j-version>
         <jetty.port>4040</jetty.port>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <logback.version>1.0.11</logback.version>
+        <slf4j.version>1.7.5</slf4j.version>
         <!--<scala.version>2.10.1</scala.version>-->
         <!--<scalate.version>1.5.2</scalate.version>-->
         <!--<scalamd.version>1.2</scalamd.version>-->
@@ -61,7 +63,7 @@
                     <user>root</user>
                     <password>p@ssw0rd</password>
                     <driver>com.mysql.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost:3306/root</url>
+                    <url>jdbc:mysql://localhost:3306/twdb</url>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -128,12 +130,6 @@
             <artifactId>selenium-server</artifactId>
             <scope>test</scope>
             <version>2.0rc3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>0.11.6</version>
-            <scope>provided</scope>
         </dependency>
 
 
@@ -203,12 +199,59 @@
             <version>3.3.1.GA</version>
         </dependency>
 
-        <!--log4j-->
+        <!--&lt;!&ndash; Hibernate library dependecy start &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>dom4j</groupId>-->
+            <!--<artifactId>dom4j</artifactId>-->
+            <!--<version>1.6.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>commons-collections</groupId>-->
+            <!--<artifactId>commons-collections</artifactId>-->
+            <!--<version>3.2.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>antlr</groupId>-->
+            <!--<artifactId>antlr</artifactId>-->
+            <!--<version>2.7.7</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash;log4j&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>log4j</groupId>-->
+            <!--<artifactId>log4j</artifactId>-->
+            <!--<version>1.2.14</version>-->
+        <!--</dependency>-->
+
+
+
+
+
+        <!-- logging dependencies -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.14</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- Defined below -->
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+
+
+
 
         <!--<lombok>-->
         <dependency>
@@ -216,6 +259,12 @@
             <artifactId>lombok</artifactId>
             <version>0.11.6</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.12.1.GA</version>
         </dependency>
     </dependencies>
 </project>
@@ -227,27 +276,3 @@
 
 
 
-        <!--&lt;!&ndash; Hibernate library dependecy start &ndash;&gt;-->
-<!--<dependency>-->
-<!--<groupId>dom4j</groupId>-->
-<!--<artifactId>dom4j</artifactId>-->
-<!--<version>1.6.1</version>-->
-<!--</dependency>-->
-
-<!--<dependency>-->
-<!--<groupId>commons-logging</groupId>-->
-<!--<artifactId>commons-logging</artifactId>-->
-<!--<version>1.1.1</version>-->
-<!--</dependency>-->
-
-<!--<dependency>-->
-<!--<groupId>commons-collections</groupId>-->
-<!--<artifactId>commons-collections</artifactId>-->
-<!--<version>3.2.1</version>-->
-<!--</dependency>-->
-
-<!--<dependency>-->
-<!--<groupId>antlr</groupId>-->
-<!--<artifactId>antlr</artifactId>-->
-<!--<version>2.7.7</version>-->
-<!--</dependency>-->

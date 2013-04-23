@@ -15,16 +15,16 @@
     <mvc:resources mapping="/resources/**" location="/resources/assets/" />
 
     <!--<bean id="viewNameTranslator" class="org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator"/>-->
-    <!--<bean  class="org.fusesource.scalate.spring.view.ScalateViewResolver">-->
-        <!--<property name="viewClass" value="org.fusesource.scalate.spring.view.ScalateView" />-->
-        <!--<property name="order" value="1" />-->
-        <!--<property name="prefix" value="/WEB-INF/scalate/" />-->
-        <!--<property name="suffix" value=".jade"/>-->
-    <!--</bean>-->
+    <bean  class="org.fusesource.scalate.spring.view.ScalateViewResolver">
+        <property name="viewClass" value="org.fusesource.scalate.spring.view.ScalateView" />
+        <property name="order" value="1" />
+        <property name="prefix" value="/WEB-INF/scalate/" />
+        <property name="suffix" value=".jade"/>
+    </bean>
 
     <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="com.thoughtworks.is.stringtemplate.StringTemplateView" />
-        <!--<property name="order" value="2" />-->
+        <property name="order" value="2" />
         <property name="prefix" value="/WEB-INF/templates/" />
         <property name="suffix" value=".st" />
         <!--<property name="requestContextAttribute" value="rc" />-->

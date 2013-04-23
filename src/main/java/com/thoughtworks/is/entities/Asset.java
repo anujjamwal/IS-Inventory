@@ -1,20 +1,21 @@
-package com.thoughtworks.is.services;
+package com.thoughtworks.is.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ASSET")
+@Table(name = "ASSETS")
 @AllArgsConstructor
 @NoArgsConstructor
 public @Data class Asset {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     private Long id;
 
     @Column(name = "type")

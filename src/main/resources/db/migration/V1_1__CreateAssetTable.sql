@@ -1,5 +1,5 @@
 create table ASSETS (
-    id int,
+    id bigint,
     type varchar(20),
     brand varchar(25),
     model varchar(30),

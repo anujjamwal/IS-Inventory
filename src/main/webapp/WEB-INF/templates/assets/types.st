@@ -1,0 +1,1 @@
+$layout/layout(body=assets/_types())$

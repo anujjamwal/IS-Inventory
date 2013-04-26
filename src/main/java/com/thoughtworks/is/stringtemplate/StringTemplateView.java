@@ -15,9 +15,9 @@ public class StringTemplateView extends InternalResourceView {
     protected void renderMergedOutputModel(Map model, HttpServletRequest request,
                                            HttpServletResponse response) throws Exception {
 
-        Resource templateFile = getApplicationContext().getResource(getUrl());
+        Resource templateFile = getApplicationContext().getResource("/WEB-INF/templates");
 
-        StringTemplateGroup group = new StringTemplateGroup("webpages", templateFile.getFile().getParent());
+        StringTemplateGroup group = new StringTemplateGroup("webpages", templateFile.getFile().getPath());
         StringTemplate template = group.getInstanceOf(getBeanName());
         template.setAttributes(model);
 

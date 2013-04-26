@@ -1,8 +1,8 @@
 package com.thoughtworks.is.controllers;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
-//import org.hibernate.cfg.Configuration;
+//import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +17,7 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         try {
             // Create the SessionFactory from hibernate.cfg.xml
-            SessionFactory sessionFactory = new AnnotationConfiguration( )
+            SessionFactory sessionFactory = new Configuration( )
                     .configure()
                     .buildSessionFactory();
             return sessionFactory;

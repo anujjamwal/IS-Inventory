@@ -29,6 +29,7 @@
         <property name="hbm2ddl.auto">validate</property>
 
         <mapping class="com.thoughtworks.is.entities.Asset"/>
+        <mapping class="com.thoughtworks.is.entities.AssetType"/>
 
 
     </session-factory>

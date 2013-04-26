@@ -14,7 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AssetControllerTest  {
 
-
+      @Test
+    public void test(){
+          Crud crud = new Crud();
+          crud.getTypes();
+      }
 
 //    @Test
 //    public void testing() {

@@ -3,6 +3,7 @@ package com.thoughtworks.is.controllers;
 import java.util.List;
 
 import com.thoughtworks.is.entities.Asset;
+import com.thoughtworks.is.entities.AssetType;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
 * To change this template use File | Settings | File Templates.
 */
 @Component
-public class Main {
+public class Crud {
 
     public Asset getById(Long id) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
@@ -26,9 +27,7 @@ public class Main {
         return asset;
     }
     public Asset save(Asset asset) {
-        SessionFactory sf = new Configuration( )
-                .configure()
-                .buildSessionFactory();
+        SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session   = sf.openSession();
 
         session.beginTransaction();
@@ -76,6 +75,30 @@ public class Main {
         List assets = session.createQuery("from Asset").list();
         session.close();
         return assets;
+    }
+
+    public List getTypes() {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        List types = session.createQuery("from AssetType").list();
+        session.close();
+        return types;
+    }
+
+    public AssetType saveType(AssetType asset_type) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session   = sf.openSession();
+
+        session.beginTransaction();
+
+        Long id = (Long) session.save(asset_type);
+        asset_type.setId(id);
+
+        session.getTransaction().commit();
+
+        session.close();
+
+        return asset_type;
     }
 }
 

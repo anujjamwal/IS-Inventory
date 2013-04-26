@@ -1,6 +1,7 @@
 package com.thoughtworks.is.controllers;
 
 import com.thoughtworks.is.entities.Asset;
+import com.thoughtworks.is.entities.AssetType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -11,37 +12,54 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+
 @Controller
 public class AssetController {
     @Autowired
-    private Main main;
+    private Crud crud;
 
     @RequestMapping("/")
-    public String addAsset(){
-        return "new";
+    public ModelAndView addAsset() {
+        ModelAndView mav = new ModelAndView("assets/new");
+        List types = crud.getTypes();
+        mav.addObject("TYPES", types);
+        return mav;
     }
 
-    @RequestMapping(value="/new",method = RequestMethod.POST)
-    public String createAsset(Model model,@ModelAttribute("asset")Asset asset, BindingResult result)
-    {
-        model.addAttribute("assetType",asset.getType());
-        model.addAttribute("model",asset.getModel());
-        model.addAttribute("serialNo",asset.getSerialNo());
-        model.addAttribute("assetTag",asset.getAssetTag());
-        model.addAttribute("brand",asset.getBrand());
-        model.addAttribute("description",asset.getDescription());
-        model.addAttribute("warranty",asset.getWarranty());
-        main.save(asset);
-        return "redirect:/show";
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public ModelAndView createAsset(@ModelAttribute("asset") Asset asset, BindingResult result) {
+          ModelAndView mav = new ModelAndView("redirect:/show");
+//        mav.addObject("assetType", asset.getType());
+//        mav.addObject("model", asset.getModel());
+//        mav.addObject("serialNo", asset.getSerialNo());
+//        mav.addObject("assetTag", asset.getAssetTag());
+//        mav.addObject("brand", asset.getBrand());
+//        mav.addObject("description", asset.getDescription());
+//        mav.addObject("warranty", asset.getWarranty());
+        crud.save(asset);
+        return mav;
     }
 
-   @RequestMapping("/show")
-    public ModelAndView showAsset()
-   {
-        ModelAndView mav = new ModelAndView("show");
-        List assets = main.getAll();
+    @RequestMapping("/show")
+    public ModelAndView showAsset() {
+        ModelAndView mav = new ModelAndView("assets/show");
+        List assets = crud.getAll();
         mav.addObject("ASSETS", assets);
         return mav;
-   }
+    }
 
+    @RequestMapping(value="/create_type",method = RequestMethod.POST)
+    public ModelAndView createType(@ModelAttribute("asset_type")AssetType asset_type, BindingResult result)
+    {   ModelAndView mav = new ModelAndView("redirect:/types");
+        crud.saveType(asset_type);
+        return mav;
+    }
+
+    @RequestMapping("/types")
+    public ModelAndView assetTypes() {
+        ModelAndView mav = new ModelAndView("assets/types");
+        List types = crud.getTypes();
+        mav.addObject("TYPES", types);
+        return mav;
+    }
 }

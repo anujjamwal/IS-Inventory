@@ -1,21 +1,13 @@
 package com.thoughtworks.is.controllers;
 
 import java.util.List;
-
 import com.thoughtworks.is.entities.Asset;
 import com.thoughtworks.is.entities.AssetType;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;
 
-/**
-* Created with IntelliJ IDEA.
-* User: pulkitko
-* Date: 4/18/13
-* Time: 12:11 PM
-* To change this template use File | Settings | File Templates.
-*/
 @Component
 public class Crud {
 
@@ -26,31 +18,24 @@ public class Crud {
         session.close();
         return asset;
     }
+
     public Asset save(Asset asset) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session session   = sf.openSession();
-
+        Session session = sf.openSession();
         session.beginTransaction();
-
         Long id = (Long) session.save(asset);
         asset.setId(id);
-
         session.getTransaction().commit();
-
         session.close();
-
         return asset;
     }
+
     public Asset update(Asset asset) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
-
         session.beginTransaction();
-
         session.merge(asset);
-
         session.getTransaction().commit();
-
         session.close();
         return asset;
 
@@ -59,13 +44,9 @@ public class Crud {
     public void delete(Asset asset) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
-
         session.beginTransaction();
-
         session.delete(asset);
-
         session.getTransaction().commit();
-
         session.close();
     }
 
@@ -80,48 +61,38 @@ public class Crud {
     public List getTypes() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
-        List types = session.createQuery("from AssetType").list();
+        List types = session.createQuery("SELECT type from AssetType").list();
         session.close();
         return types;
     }
 
     public AssetType saveType(AssetType asset_type) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session session   = sf.openSession();
-
+        Session session = sf.openSession();
         session.beginTransaction();
-
         Long id = (Long) session.save(asset_type);
         asset_type.setId(id);
-
         session.getTransaction().commit();
-
         session.close();
-
         return asset_type;
     }
+
+    public Asset getLastAsset(String type) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Query query = session.createQuery("from Asset A WHERE A.type = :type ORDER BY A.id DESC LIMIT 1");
+        query.setParameter("type", type);
+        List assets = query.list();
+        Asset asset;
+        if (!assets.isEmpty()) {
+            asset = (Asset) assets.get(0);
+        } else {
+            asset = null;
+        }
+        session.close();
+        return asset;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //

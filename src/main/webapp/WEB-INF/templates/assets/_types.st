@@ -4,7 +4,7 @@
     </tr>
     $TYPES:{
     <tr>
-        <td>$attr.type$</td>
+        <td>$attr$</td>
     </tr>
     }$
 </table>

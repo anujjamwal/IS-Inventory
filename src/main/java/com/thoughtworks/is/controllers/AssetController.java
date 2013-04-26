@@ -22,6 +22,9 @@ public class AssetController {
     public ModelAndView addAsset() {
         ModelAndView mav = new ModelAndView("assets/new");
         List types = crud.getTypes();
+        String type = (String) types.get(0);
+        Asset asset = crud.getLastAsset(type);
+        mav.addObject("ASSET",asset);
         mav.addObject("TYPES", types);
         return mav;
     }
@@ -29,15 +32,10 @@ public class AssetController {
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public ModelAndView createAsset(@ModelAttribute("asset") Asset asset, BindingResult result) {
           ModelAndView mav = new ModelAndView("redirect:/show");
-//        mav.addObject("assetType", asset.getType());
-//        mav.addObject("model", asset.getModel());
-//        mav.addObject("serialNo", asset.getSerialNo());
-//        mav.addObject("assetTag", asset.getAssetTag());
-//        mav.addObject("brand", asset.getBrand());
-//        mav.addObject("description", asset.getDescription());
-//        mav.addObject("warranty", asset.getWarranty());
-        crud.save(asset);
-        return mav;
+        System.out.println("345678985443567890876546789asset");
+          System.out.println(asset);
+          crud.save(asset);
+          return mav;
     }
 
     @RequestMapping("/show")

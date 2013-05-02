@@ -1,43 +1,50 @@
 package com.thoughtworks.is.controllers;
 
+import com.thoughtworks.is.repositories.AssetRepository;
+import com.thoughtworks.is.repositories.AssetTypeRepository;
 import junit.framework.Assert;
-import org.openqa.selenium.*;
 
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AssetControllerTest  {
 
-      @Test
-    public void test(){
-          Crud crud = new Crud();
-          crud.getTypes();
-      }
+    @Test
+    public void a() {
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 //    @Test
 //    public void testing() {
 //        WebDriver driver = new HtmlUnitDriver();
 //
 //        driver.get("http://localhost:4040");
-////        WebElement element = driver.findElement(By.name("q"));
-////        element.sendKeys("Cheese!");
-////        element.submit();
+//        WebElement element = driver.findElement(By.name("q"));
+//        element.sendKeys("Cheese!");
+//        element.submit();
 //        System.out.println("Page title is: " + driver.getTitle());
 //        Assert.assertEquals(driver.getTitle(),"Create an asset");
-////        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-////            public Boolean apply(WebDriver d) {
-////                return d.getTitle().toLowerCase().startsWith("cheese!");
-////            }
-////        });
+//        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
+//            public Boolean apply(WebDriver d) {
+//                return d.getTitle().toLowerCase().startsWith("cheese!");
+//            }
+//        });
 //
-////        System.out.println("Page title is: " + driver.getTitle());
+//        System.out.println("Page title is: " + driver.getTitle());
 //
 //        driver.quit();
 //    }
-}
+//}

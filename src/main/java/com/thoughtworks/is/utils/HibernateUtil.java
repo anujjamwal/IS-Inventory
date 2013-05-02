@@ -1,4 +1,4 @@
-package com.thoughtworks.is.controllers;
+package com.thoughtworks.is.utils;
 
 import org.hibernate.SessionFactory;
 //import org.hibernate.cfg.AnnotationConfiguration;

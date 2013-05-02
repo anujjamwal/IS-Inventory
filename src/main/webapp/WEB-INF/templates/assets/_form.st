@@ -7,7 +7,7 @@
             <label class="control-label" for="type">Asset Type </label>
 
             <div class="controls">
-                <select id="type" name="type">
+                <select id="type" name="type" onchange="doAjaxPost()">
                     $TYPES:{
                     <option value=$attr$>$attr$</option>
                     }$

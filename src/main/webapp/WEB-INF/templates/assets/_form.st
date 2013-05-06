@@ -1,7 +1,6 @@
+<h3>Add An Asset</h3>
+
 <form method="post" action="new" class="form-horizontal">
-    <div>
-        <h3>Add An Asset</h3>
-    </div>
     <div class='row-fluid form-main'>
         <div class="control-group">
             <label class="control-label" for="type">Asset Type </label>
@@ -15,42 +14,42 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="Brand">Brand </label>
+            <label class="control-label" for="brand">Brand </label>
 
             <div class="controls">
-                <input type=text id="brand" name="brand" value="$ASSET.brand$" />
+                <input type=text id="brand" name="brand" value="$ASSET.brand$"/>
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="Model">Model </label>
+            <label class="control-label" for="model">Model </label>
 
             <div class="controls">
-                <input type=text id="model" name="model" value="$ASSET.model$" />
+                <input type=text id="model" name="model" value="$ASSET.model$"/>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="serialNo">Serial_no </label>
 
             <div class="controls">
-                <input type=text id="serialNo" name="serialNo" />
+                <input type=text id="serialNo" name="serialNo"/>
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="Warranty">Warranty </label>
+            <label class="control-label" for="warranty">Warranty </label>
 
             <div class="controls">
-                <input type=text id="warranty" name="warranty" value="$ASSET.warranty$" />
+                <input type=text id="warranty" name="warranty" value="$ASSET.warranty$"/>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="assetTag">Asset Tag</label>
 
             <div class="controls">
-                <input type=text id="assetTag" name="assetTag" value="$ASSET.assetTag$" />
+                <input type=text id="assetTag" name="assetTag" value="$ASSET.assetTag$"/>
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="Description">Description</label>
+            <label class="control-label" for="description">Description</label>
 
             <div class="controls">
                 <textarea id="description" name="description">$ASSET.description$</textarea>
@@ -63,7 +62,3 @@
         </div>
     </div>
 </form>
-</div>
-</div>
-<div class="span1"></div>
-</div>

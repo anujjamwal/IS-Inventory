@@ -36,9 +36,9 @@ public class AssetController {
     }
 
     @RequestMapping(value = "/", method = POST)
-    public @ResponseBody void loadAsset(@ModelAttribute("type") String type) {
+    public @ResponseBody Asset loadAsset(@ModelAttribute("type") String type) {
         Asset asset = assetRepository.getLastAsset(type);
-        return;
+        return asset;
     }
 
 

@@ -6,10 +6,10 @@ type: "POST",
 url: "/",
 data: "type=" + type,
 success: function(response){
-// we have the response
+//we have the response
 $('#brand').val(response.brand);
 $('#model').val(response.model);
-$('#serialNo').val(response.serialNo);
+$('#serialNo').val('');
 $('#warranty').val(response.warranty);
 $('#assetTag').val(response.assetTag);
 $('#description').val(response.description);

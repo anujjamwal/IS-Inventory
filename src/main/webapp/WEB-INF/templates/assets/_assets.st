@@ -28,13 +28,20 @@
                 <h3 id="myModalLabel">Assign this $attr.type$</h3>
             </div>
             <div class="modal-body">
-                <form method="post" action="show" class="form-horizontal">
+                <form method="post" action="assigned_assets" class="form-horizontal">
                     <div class="row-fluid form-main">
                         <div class="control-group">
-                            <label class="control-label" for="type">Assign To </label>
+                            <label class="control-label" for="assetTag">Asset Tag </label>
 
                             <div class="controls">
-                                <select id="type" name="type">
+                                <input type=text id="assetTag" name="assetTag" value="$attr.assetTag$" readonly="true"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="identifier1Type">Assign To </label>
+
+                            <div class="controls">
+                                <select id="identifier1Type" name="identifier1Type">
                                     <option value=Office>Office</option>
                                     <option value=Individual>Individual</option>
                                     <option value=Project>Project</option>
@@ -42,10 +49,10 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="identifier">Identifier </label>
+                            <label class="control-label" for="identifier1">Identifier </label>
 
                             <div class="controls">
-                                <input type=text id="identifier" name="identifier"/>
+                                <input type=text id="identifier1" name="identifier1"/>
                             </div>
                         </div>
                         <div class="control-group">

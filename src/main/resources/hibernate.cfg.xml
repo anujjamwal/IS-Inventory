@@ -12,7 +12,7 @@
         <property name="connection.password">p@ssw0rd</property>
 
         <!-- JDBC connection pool (use the built-in) -->
-        <property name="connection.pool_size">5</property>
+        <property name="connection.pool_size">10</property>
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -30,6 +30,8 @@
 
         <mapping class="com.thoughtworks.is.entities.Asset"/>
         <mapping class="com.thoughtworks.is.entities.AssetType"/>
+        <mapping class="com.thoughtworks.is.entities.AssignedAsset"/>
+
 
 
     </session-factory>

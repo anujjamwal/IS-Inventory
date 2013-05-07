@@ -6,6 +6,7 @@ import com.thoughtworks.is.utils.HibernateUtil;
 import com.thoughtworks.is.entities.Asset;
 import com.thoughtworks.is.entities.AssetType;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang.ObjectUtils;
 import org.hibernate.Query;
 import org.hibernate.Session;

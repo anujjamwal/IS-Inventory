@@ -4,6 +4,8 @@ import com.thoughtworks.is.entities.Asset;
 import com.thoughtworks.is.entities.AssetType;
 import com.thoughtworks.is.repositories.AssetRepository;
 import com.thoughtworks.is.repositories.AssetTypeRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,6 +18,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @Controller
+@NoArgsConstructor
+@AllArgsConstructor
 public class AssetController {
 
     @Autowired
@@ -28,9 +32,9 @@ public class AssetController {
     public ModelAndView addAsset() {
         ModelAndView mav = new ModelAndView("assets/new");
         List types = assetTypeRepository.getTypes();
-        String type = (String) types.get(0);
+        if(!types.isEmpty()){String type = (String) types.get(0);
         Asset asset = assetRepository.getLastAsset(type);
-        mav.addObject("ASSET",asset);
+        mav.addObject("ASSET",asset);}
         mav.addObject("TYPES", types);
         return mav;
     }

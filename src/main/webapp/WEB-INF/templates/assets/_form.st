@@ -17,7 +17,7 @@
             <label class="control-label" for="brand">Brand </label>
 
             <div class="controls">
-                <input type=text id="brand" name="brand" value="$ASSET.brand$"/>
+                <input type="text" id="brand" name="brand" value="$ASSET.brand$"/>
             </div>
         </div>
         <div class="control-group">

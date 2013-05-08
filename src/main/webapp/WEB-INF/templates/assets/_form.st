@@ -35,6 +35,13 @@
             </div>
         </div>
         <div class="control-group">
+            <label class="control-label" for="purchaseDate">Purchase Date: </label>
+
+            <div class="controls">
+                <input type="text" id="purchaseDate" class="datepicker" name="purchaseDate">
+            </div>
+        </div>
+        <div class="control-group">
             <label class="control-label" for="warranty">Warranty: </label>
 
             <div class="controls">

@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
@@ -22,6 +23,7 @@ import static org.testng.Assert.assertNull;
 public class AssetRepositoryTest {
 
     private Asset asset;
+    private Date utilDate;
 
     @Mock
     private Session mockSession;
@@ -34,8 +36,10 @@ public class AssetRepositoryTest {
     @BeforeMethod
     public void setup(){
         initMocks(this);
-        asset = new Asset(1l, "Laptop", "Apple", "Mac Air", "12345678900987654321",
-                          "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD");
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        utilDate = cal.getTime();
+        asset = new Asset(1l, "Laptop", "Apple", "Mac Air", "12345678900987654321", utilDate,
+                          "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD", Boolean.FALSE);
         assetRepository = new AssetRepository(mockSessionFactory, mockSession);
     }
 
@@ -57,19 +61,19 @@ public class AssetRepositoryTest {
     public void shouldGetAllAssets(){
         List myList = Arrays.asList("a", "b", "c");
         Query mockQuery = mock(Query.class);
-        when(mockSession.createQuery("from Asset")).thenReturn(mockQuery);
+        when(mockSession.createQuery("FROM Asset A WHERE A.isAssigned = FALSE")).thenReturn(mockQuery);
         when(mockQuery.list()).thenReturn(myList);
 
         List all = assetRepository.getAll();
 
-        verify(mockSession).createQuery("from Asset");
+        verify(mockSession).createQuery("FROM Asset A WHERE A.isAssigned = FALSE");
         assertEquals(myList, all);
     }
 
     @Test
     public void shouldGetLastAsset(){
-        Asset asset1 = new Asset(2l, "Monitor", "Apple", "Mac Air", "12345678900987654321",
-                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD");
+        Asset asset1 = new Asset(2l, "Monitor", "Apple", "Mac Air", "12345678900987654321", utilDate,
+                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD", Boolean.FALSE);
         List myList = Arrays.asList(asset, asset1);
         Query mockQuery = mock(Query.class);
         when(mockSession.createQuery(anyString())).thenReturn(mockQuery);

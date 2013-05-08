@@ -19,3 +19,9 @@ alert('Error: ' + e);
 }
 });
 }
+
+
+
+$(document).ready(function() {
+    $( ".datepicker" ).datepicker();
+    });

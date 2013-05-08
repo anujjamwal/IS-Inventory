@@ -11,9 +11,9 @@
     <tr>
         <td>$attr.id$</td>
         <td>$attr.assetTag$</td>
-        <td>$attr.identifier1Type$</td>
-        <td>$attr.identifier1$</td>
-        <td>$attr.assignedDate1$</td>
+        <td>$attr.identifierType$</td>
+        <td>$attr.identifier$</td>
+        <td>$attr.assignedDate$</td>
         <td><a href="#myModal" role="button" class="btn" data-toggle="modal">Assign History</a></td>
         <!-- Modal -->
         <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

@@ -52,6 +52,7 @@ public class AssetController {
     @RequestMapping(value = "/new", method = POST)
     public ModelAndView createAsset(@ModelAttribute("asset") Asset asset, BindingResult result) {
         ModelAndView mav = new ModelAndView("redirect:/show");
+        asset.setIsAssigned(Boolean.FALSE);
         assetRepository.save(asset);
         return mav;
     }

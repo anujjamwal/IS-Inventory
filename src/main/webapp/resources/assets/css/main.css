@@ -62,6 +62,14 @@
 
 .control-group .control-label {
   font-size: 16px;
+  float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.control-group .controls {
+    margin-left: 180px;
 }
 
 .control-group .controls input {
@@ -69,6 +77,10 @@
   width: 220;
   padding: 0px 0px 0px 8px;
   border: none;
+}
+
+#identifier {
+  border: 1px solid lightgrey;
 }
 
 .form-horizontal {

@@ -1,0 +1,1 @@
+ALTER TABLE ASSETS ADD purchaseDate Date;

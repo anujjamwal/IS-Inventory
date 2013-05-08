@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
@@ -30,6 +31,9 @@ public @Data class Asset {
     @Column(name = "serialNo")
     private String serialNo;
 
+    @Column(name = "purchaseDate")
+    private Date purchaseDate;
+
     @Column(name = "warranty")
     private String warranty;
 
@@ -39,6 +43,7 @@ public @Data class Asset {
     @Column(name = "description")
     private String description;
 
-
+    @Column(name = "isAssigned")
+    private Boolean isAssigned;
 }
 

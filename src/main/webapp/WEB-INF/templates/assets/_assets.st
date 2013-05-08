@@ -38,10 +38,10 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="identifier1Type">Assign To </label>
+                            <label class="control-label" for="identifierType">Assign To </label>
 
                             <div class="controls">
-                                <select id="identifier1Type" name="identifier1Type">
+                                <select id="identifierType" name="identifierType">
                                     <option value=Office>Office</option>
                                     <option value=Individual>Individual</option>
                                     <option value=Project>Project</option>
@@ -49,10 +49,10 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="identifier1">Identifier </label>
+                            <label class="control-label" for="identifier">Identifier </label>
 
                             <div class="controls">
-                                <input type=text id="identifier1" name="identifier1"/>
+                                <input type=text id="identifier" name="identifier"/>
                             </div>
                         </div>
                         <div class="control-group">
@@ -68,5 +68,6 @@
     </tr>
     }$
 </table>
+
 
 

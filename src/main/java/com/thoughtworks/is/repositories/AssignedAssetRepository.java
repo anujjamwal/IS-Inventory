@@ -3,6 +3,7 @@ package com.thoughtworks.is.repositories;
 import com.thoughtworks.is.entities.AssignedAsset;
 import com.thoughtworks.is.utils.HibernateUtil;
 import lombok.AllArgsConstructor;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -25,6 +26,9 @@ public class AssignedAssetRepository {
     public AssignedAsset saveAssignedAsset(AssignedAsset assignedAsset) {
 
         session.beginTransaction();
+        Query query = session.createQuery("UPDATE Asset set isAssigned = TRUE WHERE assetTag = :asset_tag");
+        query.setParameter("asset_tag", assignedAsset.getAssetTag());
+        query.executeUpdate();
         session.save(assignedAsset);
         session.getTransaction().commit();
         return assignedAsset;

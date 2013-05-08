@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static org.mockito.Mockito.verify;
@@ -22,6 +23,7 @@ public class AssetControllerTest  {
     private AssetController assetController;
     private AssetType assetType, assetType1,assetType2;
     private Asset asset;
+    private Date utilDate;
 
     @Mock
     private AssetRepository mockAssetRepository;
@@ -36,8 +38,10 @@ public class AssetControllerTest  {
     public void setUp(){
         initMocks(this);
         assetController = new AssetController(mockAssetRepository, mockAssetTypeRepository);
-        asset = new Asset(1l, "Laptop", "Apple", "Mac Air", "12345678900987654321",
-                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD");
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        utilDate = cal.getTime();
+        asset = new Asset(1l, "Laptop", "Apple", "Mac Air", "12345678900987654321", utilDate,
+                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD", Boolean.FALSE);
         assetType = new AssetType(1l,"Laptop");
         assetType1 = new AssetType(2l,"Keyboard");
         assetType2 = new AssetType();
@@ -90,8 +94,8 @@ public class AssetControllerTest  {
 
     @Test
     public void shouldShowAsset(){
-        Asset asset1 = new Asset(2l, "Monitor", "Apple", "Mac Air", "12345678900987654321",
-                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD");
+        Asset asset1 = new Asset(2l, "Monitor", "Apple", "Mac Air", "12345678900987654321", utilDate,
+                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD", Boolean.FALSE);
         List myList = Arrays.asList(asset, asset1);
         when(mockAssetRepository.getAll()).thenReturn(myList);
 

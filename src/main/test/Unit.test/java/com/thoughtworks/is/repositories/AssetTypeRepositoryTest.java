@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static org.mockito.Matchers.anyString;
@@ -23,6 +24,7 @@ import static org.testng.Assert.assertEquals;
 public class AssetTypeRepositoryTest {
 
     private Asset asset;
+    private Date utilDate;
 
     private AssetTypeRepository assetTypeRepository;
 
@@ -35,8 +37,10 @@ public class AssetTypeRepositoryTest {
     @BeforeMethod
     public void setup(){
         initMocks(this);
-        asset = new Asset(1l, "Laptop", "Apple", "Mac Air", "12345678900987654321",
-                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD");
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        utilDate = cal.getTime();
+        asset = new Asset(1l, "Laptop", "Apple", "Mac Air", "12345678900987654321", utilDate,
+                "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD", Boolean.FALSE);
         assetTypeRepository = new AssetTypeRepository(mockSessionFactory, mockSession);
     }
 

@@ -4,6 +4,7 @@
 <li><a href="/" id="create">New</a></li>
 <li><a href="/show" id="Stock">Stock</a></li>
 <li><a href="/types" id="types">Add Asset Type</a></li>
+<li><a href="/assigned" id="assignedAssets">Assigned Assets</a></li>
 <div class="clearfix"></div>
 </ul>
 

@@ -32,7 +32,7 @@ public class AssetRepository {
     }
 
     public List getAll() {
-        List assets = session.createQuery("from Asset").list();
+        List assets = session.createQuery("FROM Asset A WHERE A.isAssigned = FALSE").list();
         return assets;
     }
 

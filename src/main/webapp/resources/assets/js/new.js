@@ -15,7 +15,7 @@ $('#assetTag').val(response.assetTag);
 $('#description').val(response.description);
 },
 error: function(e){
-alert('Error: ' + e);
+alert('Error: '+ e);
 }
 });
 }

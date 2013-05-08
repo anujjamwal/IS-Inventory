@@ -10,13 +10,14 @@
     <script type="text/javascript" src="resources/js/new.js"></script>
 </head>
 <body>
-<div class="navbar-background"></div>
-<div class="center-alignment">
     <div class="header">$partial/header()$</div>
     <div class="content">
-        <div class="pageContainer">$body$</div>
+        <div class="center-alignment">
+          <div class="pageContainer">$body$</div>
+        </div>
     </div>
-    <div class="footer">$partial/footer()$</div>
-</div>
+    <div class="footer">
+        <div class="center-alignment">$partial/footer()$</div>
+    </div>
 </body>
 </html>

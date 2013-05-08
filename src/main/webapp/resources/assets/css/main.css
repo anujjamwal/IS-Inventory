@@ -3,19 +3,13 @@
  margin: 0px !important;
 }
 
-.navbar-background {
-    position: absolute;
-    top: 70px;
-    height: 40px;
-    width: 100%;
+.header {
     background-color: #719688;
 }
-
 
 .center-alignment {
        margin: auto;
        width: 1000px;
-       position: relative;
 }
 
 .header h1 {
@@ -27,8 +21,6 @@
 
 .header ul {
     margin: 0px;
-    padding-top: 10px
-
 }
 
 .header ul li {
@@ -51,7 +43,7 @@
   color: white;
 }
 
-.center-alignment .content {
+.content .pageContainer {
     background-color: #D4E7DD;
 }
 

@@ -24,11 +24,11 @@
 
     <build>
         <testSourceDirectory>
-            ${project.basedir}/src/main/test/java
+            src/main/test/Unit.test/java
         </testSourceDirectory>
         <testResources>
             <testResource>
-                <directory>${project.basedir}/src/main/test/resources</directory>
+                <directory>src/main/test/Unit.test/resources</directory>
             </testResource>
         </testResources>
 

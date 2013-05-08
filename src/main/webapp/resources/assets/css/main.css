@@ -1,13 +1,14 @@
 .body {
+ min-width: 1000px;
  margin: 0px !important;
 }
 
 .navbar-background {
     position: absolute;
-    top: 50px
-    height: 50px;
+    top: 70px;
+    height: 40px;
     width: 100%;
-    background-color: #005B7D;
+    background-color: #719688;
 }
 
 
@@ -18,15 +19,16 @@
 }
 
 .header h1 {
-    color: #7ecae0;
-    padding-top: 24px;
+    color: #294115;
+    padding-top: 20px;
     font-size: 45px;
-    margin-top: 0px;
+    margin: 0px;
 }
 
 .header ul {
-    padding-top: 10px;
     margin: 0px;
+    padding-top: 10px
+
 }
 
 .header ul li {
@@ -39,11 +41,54 @@
 .clearfix {
     clear: both;
 }
+
 .header ul li a {
+  color: #D4E7DD;
   text-decoration: none;
 }
 
+.header ul li a:hover {
+  color: white;
+}
+
 .center-alignment .content {
-    background-color: #56C6C7;
-    border-radius: 20px;
+    background-color: #D4E7DD;
+}
+
+.content .pageContainer h3 {
+ color: #294115;
+ padding: 15px 0px 10px 70px;
+}
+
+.control-group .control-label {
+  font-size: 16px;
+}
+
+.control-group .controls input {
+  height: 28;
+  width: 220;
+  padding: 0px 0px 0px 8px;
+  border: none;
+}
+
+.form-horizontal {
+   margin: 0px;
+}
+.control-group .controls textarea {
+  width: 220;
+  height: 80px;
+}
+
+.control-group .controls button {
+  font-size: 18px;
+}
+
+.footer {
+ text-align: center;
+ padding: 4px 0px 4px 0px;
+}
+
+.footer a {
+   text-decoration: none;
+   color:  #719688;
 }

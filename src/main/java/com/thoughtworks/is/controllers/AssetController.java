@@ -63,8 +63,6 @@ public class AssetController {
         mav.addObject("ASSETS", assets);
         return mav;
     }
-
-
 }
 
 

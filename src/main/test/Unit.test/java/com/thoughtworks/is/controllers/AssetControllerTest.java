@@ -20,7 +20,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class AssetControllerTest  {
     private AssetController assetController;
-    private AssetType assetType, assetType1;
+    private AssetType assetType, assetType1,assetType2;
     private Asset asset;
 
     @Mock
@@ -40,6 +40,7 @@ public class AssetControllerTest  {
                 "10 yrs", "TW/IND/GGN/LT/1", "8 GB RAM, 500 GB HD");
         assetType = new AssetType(1l,"Laptop");
         assetType1 = new AssetType(2l,"Keyboard");
+        assetType2 = new AssetType();
     }
 
     @Test
@@ -55,7 +56,17 @@ public class AssetControllerTest  {
         assertEquals("assets/new", result.getViewName());
 
     }
+    @Test
+    public void shouldNotShowPreFilledAsset() {
+        List myList = Arrays.asList(assetType2.getType());
+        when (mockAssetTypeRepository.getTypes()).thenReturn(myList);
 
+        ModelAndView result = assetController.addAsset();
+
+        assertEquals(myList, result.getModelMap().get("TYPES"));
+        assertEquals("assets/new", result.getViewName());
+
+    }
     @Test
     public void shouldLoadAsset(){
         Asset asset1;
@@ -89,5 +100,4 @@ public class AssetControllerTest  {
         verify(mockAssetRepository).getAll();
         assertEquals(myList, result.getModelMap().get("ASSETS"));
     }
-
 }
